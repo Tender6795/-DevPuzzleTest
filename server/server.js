@@ -8,8 +8,7 @@ import bluebird from 'bluebird';
 import config from "./config";
 import errorHandler from './middlewares/errorHandler';
 
-
-
+import vacationDayRoute from './routes/vacationDayRoute';
 
 
 
@@ -23,7 +22,6 @@ mongoose.connect(config.database, {useNewUrlParser: true}, err => {
 
 const server = app.listen(config.port, err => {
   if (err) throw err;
-
   console.log(`Server listening on port ${config.port}`);
 });
 
@@ -36,7 +34,7 @@ app.use(session({
   secret: config.secret
 }));
 
-
+app.use('/api',vacationDayRoute);
 
 app.use(errorHandler);
 
