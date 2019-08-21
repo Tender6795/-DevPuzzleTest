@@ -15,10 +15,10 @@ export default async(req,res,next)=>{
       message:"Date is not valid"
     })
   }
-  if((moment(day).isBefore(new Date()))){
+  if(moment(day).isBefore(new Date())){
     return next({
       status:403,
-      message:"Date in the pass"
+      message:"Date in the pass or today"
     })
   }
 

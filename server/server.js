@@ -4,6 +4,7 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import bluebird from 'bluebird';
+import cors from 'cors';
 
 import config from "./config";
 import errorHandler from './middlewares/errorHandler';
@@ -26,6 +27,7 @@ const server = app.listen(config.port, err => {
 });
 
 app.use(morgan('tiny'));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
