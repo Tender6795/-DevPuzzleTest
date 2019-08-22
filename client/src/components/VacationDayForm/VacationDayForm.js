@@ -46,7 +46,7 @@ class VacationDayForm extends Component {
             })
           }).catch(err => {
             let message='';
-if(err.response.data.message){
+if(err.response){
   message=err.response.data.message
 }else{
   message=err.message;

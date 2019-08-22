@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ac08317-d5f1-44bf-bc40-0257e8093402" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/VacationTable/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45258215">
+    <splitter split-orientation="horizontal" split-proportion="0.6647887">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -50,8 +50,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
+                <state relative-caret-position="220">
+                  <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -64,18 +64,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="80">
                   <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -114,11 +102,23 @@
       </split-first>
       <split-second>
         <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1180">
+                  <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+                <state relative-caret-position="84">
+                  <caret line="21" selection-start-line="21" selection-end-line="21" />
                 </state>
               </provider>
             </entry>
@@ -158,10 +158,10 @@
         <option value="$PROJECT_DIR$/server/middlewares/dateValidator.js" />
         <option value="$PROJECT_DIR$/client/src/components/Home/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/App/App.js" />
-        <option value="$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/VacationTable/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Home/Home.js" />
+        <option value="$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Home/Home.js" />
       </list>
     </option>
   </component>
@@ -257,7 +257,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566482206704" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566490081536" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -286,7 +286,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566380204619</updated>
-      <workItem from="1566380208177" duration="24425000" />
+      <workItem from="1566380208177" duration="25917000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <created>1566382723769</created>
@@ -323,11 +323,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566474079211</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed bugs">
+      <created>1566482237976</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566482237976</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24425000" />
+    <option name="totallyTimeSpent" value="25917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -373,7 +380,8 @@
     <MESSAGE value="created a template for front end and started a calendar" />
     <MESSAGE value="add vacation day in db" />
     <MESSAGE value="add Home component and fixed errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Home component and fixed errors" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/config/index.js">
@@ -530,18 +538,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/VacationDayForm/VacationDayForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="1180">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -550,8 +548,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/VacationTable/VacationTable.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
