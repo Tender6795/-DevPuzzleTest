@@ -23,26 +23,40 @@ class VacationDayForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if (!moment(this.state.day).isValid()) {
+    if(this.props.vacationDayCountFree<=0){
       this.setState({
         day: moment().format('YYYY-MM-DD'),
-        status: 'Not valid date',
+        status: 'No more days left',
       });
-    } else {
-      // alert(this.state.day);
-      axios.post('http://localhost:4000/api/vacationDay',{day: this.state.day})
-        .then(res => {
-          this.setState({
-            day: this.state.day,
-            status: 'Done',
-          })
-        }).catch(err => {
+    }
+    else {
+
+      if (!moment(this.state.day).isValid()) {
         this.setState({
           day: moment().format('YYYY-MM-DD'),
-          status: err.response.data.message,
+          status: 'Not valid date',
+        });
+      } else {
+        axios.post('http://localhost:4000/api/vacationDay', {day: this.state.day})
+          .then(res => {
+            this.props.updateData(this.state.day);
+            this.setState({
+              day: this.state.day,
+              status: 'Done',
+            })
+          }).catch(err => {
+            let message='';
+if(err.response.data.message){
+  message=err.response.data.message
+}else{
+  message=err.message;
+}
+          this.setState({
+            day: moment().format('YYYY-MM-DD'),
+            status: message,
+          })
         })
-        console.dir(err);
-      })
+      }
     }
   }
 
