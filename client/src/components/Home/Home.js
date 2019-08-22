@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import VacationDayForm from '../VacationDayForm';
 import axios from 'axios';
 
+import VacationDayForm from '../VacationDayForm';
+import VacationTable from '../VacationTable';
 
 class Home extends Component {
   constructor(props) {
@@ -13,34 +14,43 @@ class Home extends Component {
       vacationDays: []
     };
 
-    axios.get('http://localhost:4000/api/vacationDay')
-      .then(res => {
-        if (res.data) {
-          this.setState({
-            vacationDays: res.data,
-            vacationDayCountFree: this.state.vacationDayCountFree - res.data.length,
-          })
-          console.dir(this.state.vacationDayCountFree);
-          console.dir(this.state.vacationDays);
-        }
-      });
+    this.loadData();
+  }
+
+   loadData() {
+axios.get('http://localhost:4000/api/vacationDay').then(res=>{
+  if (res.data) {
+    this.setState({
+      vacationDays: res.data,
+      vacationDayCountFree: this.state.vacationDayCountFree - res.data.length,
+    })
+  }
+})
+
 
   }
+
 
   updateData(vacationDay) {
     this.setState({
       vacationDayCountFree: this.state.vacationDayCountFree - 1,
       vacationDays: [...this.state.vacationDays, vacationDay],
     });
-    console.dir(this.state.vacationDayCountFree);
-    console.dir(this.state.vacationDays);
   }
 
   render() {
+    console.log('++++Render+++++');
+    console.dir(this.state.vacationDays);// Сдесь уже есть
+    console.log('++++Render+++++');
     return (
-      <VacationDayForm vacationDayCountFree={this.state.vacationDayCountFree}
-                       updateData={this.updateData}
-      />
+      <div>
+        <VacationDayForm vacationDayCountFree={this.state.vacationDayCountFree}
+                         updateData={this.updateData}
+        />
+        <VacationTable vacationDayCountAll={this.state.vacationDayCountAll}
+                       vacationDayCountFree={this.state.vacationDayCountFree}
+                       vacationDays={this.state.vacationDays}/>
+      </div>
     )
   }
 
