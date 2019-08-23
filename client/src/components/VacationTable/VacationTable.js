@@ -12,7 +12,8 @@ class VacationTable extends Component {
       vacationDayCountAll: 0,
       vacationDayCountFree: 0,
       vacationDays: [],
-
+    }
+    this.month = {
       January: [],
       February: [],
       March: [],
@@ -26,7 +27,6 @@ class VacationTable extends Component {
       November: [],
       December: [],
     }
-
   }
 
 
@@ -38,30 +38,43 @@ class VacationTable extends Component {
         vacationDays: nextProps.vacationDays
       })
     }
-    this.loadMonth();
-
+    //this.loadMonth();
   }
 
-  loadMonth() {
+  loadMonth=()=> {
+    let days = [];
     this.state.vacationDays.map(day => {
       console.log(moment(day.day).month());
       if (moment(day.day).month() === 7) {
-        this.setState({
-          August: day.day
-        })
+        days = [...days ,day.day];
       }
-
+      this.month.August = [...days];
     })
+
+
+    console.log('==========August==========')
+    console.dir(this.month.August)
   }
 
 
-  render() {
 
-    // let content = this.state.vacationDays.map(function (day) {
-    //   console.log('===map===');
-    //   console.log(day);
-    // })
-    // console.dir(this.state.August);
+  render() {
+    this.loadMonth();
+    // {
+    //   let days = [];
+    //   this.state.vacationDays.map(day => {
+    //     console.log(moment(day.day).month());
+    //     if (moment(day.day).month() === 7) {
+    //       days = [...days ,day.day];
+    //     }
+    //     this.month.August = [...days];
+    //   })
+    // }
+    // {
+    //   console.log('==========August==========')
+    //    console.dir(this.month.August)
+    // }
+
     return (
       <div>
         <Table celled>
@@ -89,7 +102,7 @@ class VacationTable extends Component {
 
               {/*...............................................*/}
               {/*moment(day.day).month()*   возращает номер месяца начиная с 0/}
-              {/*{console.dir(this.state.vacationDays)}    список всех выходных дней*/}
+               {/*{console.dir(this.state.vacationDays)}   список всех выходных дней*/}
               {/*...............................................*/}
 
 
