@@ -46,13 +46,14 @@ class VacationDayForm extends Component {
             })
           }).catch(err => {
             let message='';
+            console.dir(err);
 if(err.response){
   message=err.response.data.message
 }else{
   message=err.message;
 }
           this.setState({
-            day: moment().format('YYYY-MM-DD'),
+            day: this.state.day,
             status: message,
           })
         })

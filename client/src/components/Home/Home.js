@@ -20,6 +20,7 @@ class Home extends Component {
   loadData() {
     axios.get('http://localhost:4000/api/vacationDay').then(res => {
       if (res.data) {
+
         this.setState({
           vacationDayCountAll:this.state.vacationDayCountAll,
           vacationDays: res.data,
@@ -28,24 +29,27 @@ class Home extends Component {
       }
     })
 
+
   }
 
 
-  updateData(vacationDay) {
+  updateData=(vacationDay) =>{
+    console.log('updateData');
+    console.dir(this.state);
     this.setState({
       vacationDayCountAll:this.state.vacationDayCountAll,
       vacationDayCountFree: this.state.vacationDayCountFree - 1,
       vacationDays: [...this.state.vacationDays, vacationDay],
     });
-  }
+
+  };
 
   render() {
 
     return (
       <div>
         <VacationDayForm vacationDayCountFree={this.state.vacationDayCountFree}
-                         updateData={this.updateData}
-        />
+                         updateData={this.updateData}/>
         <VacationTable vacationDayCountAll={this.state.vacationDayCountAll}
                        vacationDayCountFree={this.state.vacationDayCountFree}
                        vacationDays={this.state.vacationDays}/>
