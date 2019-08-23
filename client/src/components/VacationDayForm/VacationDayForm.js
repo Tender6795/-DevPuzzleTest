@@ -9,7 +9,7 @@ class VacationDayForm extends Component {
     super(props);
 
     this.state = {
-      day: moment().format('YYYY-MM-DD'),
+      day: moment().add( 1,'days').format('YYYY-MM-DD'),
       status: '',
     };
     this.onChange = this.onChange.bind(this);
@@ -69,7 +69,7 @@ if(err.response){
                 name="day"
                 value={this.state.day}
                 onChange={this.onChange}
-                min={moment().format('YYYY-MM-DD')}
+                min={moment().add(1,'days').format('YYYY-MM-DD')}
         />
         <Button onClick={this.onSubmit}>Add</Button>
         <Message content={this.state.status}/>

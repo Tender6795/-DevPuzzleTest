@@ -7,14 +7,14 @@ import VacationTable from '../VacationTable';
 class Home extends Component {
   constructor(props) {
     super(props);
-
+    this.loadData();
     this.state = {
       vacationDayCountAll: 30,
       vacationDayCountFree: 30,
       vacationDays: []
     };
 
-    this.loadData();
+
   }
 
   loadData() {
@@ -34,8 +34,7 @@ class Home extends Component {
 
 
   updateData=(vacationDay) =>{
-    console.log('updateData');
-    console.dir(this.state);
+
     this.setState({
       vacationDayCountAll:this.state.vacationDayCountAll,
       vacationDayCountFree: this.state.vacationDayCountFree - 1,
