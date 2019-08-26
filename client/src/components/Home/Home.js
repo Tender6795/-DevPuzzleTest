@@ -20,7 +20,6 @@ class Home extends Component {
   loadData() {
     axios.get('http://localhost:4000/api/vacationDay').then(res => {
       if (res.data) {
-
         this.setState({
           vacationDayCountAll:this.state.vacationDayCountAll,
           vacationDays: res.data,
@@ -34,7 +33,6 @@ class Home extends Component {
 
 
   updateData=(vacationDay) =>{
-
     this.setState({
       vacationDayCountAll:this.state.vacationDayCountAll,
       vacationDayCountFree: this.state.vacationDayCountFree - 1,

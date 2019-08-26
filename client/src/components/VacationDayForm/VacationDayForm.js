@@ -9,7 +9,7 @@ class VacationDayForm extends Component {
     super(props);
 
     this.state = {
-      day: moment().add( 1,'days').format('YYYY-MM-DD'),
+      day: moment().add(1, 'days').format('YYYY-MM-DD'),
       status: '',
     };
     this.onChange = this.onChange.bind(this);
@@ -23,13 +23,12 @@ class VacationDayForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if(this.props.vacationDayCountFree<=0){
+    if (this.props.vacationDayCountFree <= 0) {
       this.setState({
         day: moment().format('YYYY-MM-DD'),
         status: 'No more days left',
       });
-    }
-    else {
+    } else {
 
       if (!moment(this.state.day).isValid()) {
         this.setState({
@@ -39,19 +38,19 @@ class VacationDayForm extends Component {
       } else {
         axios.post('http://localhost:4000/api/vacationDay', {day: this.state.day})
           .then(res => {
-            this.props.updateData(this.state.day);
+            this.props.updateData(res.data);
             this.setState({
               day: this.state.day,
               status: 'Done',
             })
           }).catch(err => {
-            let message='';
-            console.dir(err);
-if(err.response){
-  message=err.response.data.message
-}else{
-  message=err.message;
-}
+          let message = '';
+          console.dir(err);
+          if (err.response) {
+            message = err.response.data.message
+          } else {
+            message = err.message;
+          }
           this.setState({
             day: this.state.day,
             status: message,
@@ -69,7 +68,7 @@ if(err.response){
                 name="day"
                 value={this.state.day}
                 onChange={this.onChange}
-                min={moment().add(1,'days').format('YYYY-MM-DD')}
+                min={moment().add(1, 'days').format('YYYY-MM-DD')}
         />
         <Button onClick={this.onSubmit}>Add</Button>
         <Message content={this.state.status}/>
