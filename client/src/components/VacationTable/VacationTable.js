@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 
-import {Table} from 'semantic-ui-react'
+import {Table} from 'semantic-ui-react';
+import style from './VacationTable.module.css';
 
 
 class VacationTable extends Component {
@@ -57,28 +58,32 @@ class VacationTable extends Component {
     this.loadMonthNames();
 
     let months = this.monthNames.map(month => (
-      <Table.HeaderCell key={month}>{month}</Table.HeaderCell>
+      <Table.HeaderCell className={style['VacationTableHeaderCell']} key={month} >
+        {month}
+      </Table.HeaderCell>
     ));
 
     let vacation=this.monthNames.map(month=>(
-      <Table.Cell key={month}>{this.month[month].sort().join()}</Table.Cell>
+      <Table.Cell className={style['VacationTableCell']} key={month}  >
+        {this.month[month].sort().join(',\n')}
+      </Table.Cell>
     ));
 
 
 
     return (
       <div>
-        <Table celled>
+        <Table celled className={style['VacationTable']}>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Entitlement/DaysRemaining</Table.HeaderCell>
+              <Table.HeaderCell className={style['VacationTableHeaderCell']}>Entitlement/DaysRemaining</Table.HeaderCell>
               {months}
             </Table.Row>
           </Table.Header>
 
           <Table.Body>
             <Table.Row>
-              <Table.Cell>{this.state.vacationDayCountFree}/{this.state.vacationDayCountAll}</Table.Cell>
+              <Table.Cell className={style['VacationTableCell']}>{this.state.vacationDayCountFree}/{this.state.vacationDayCountAll}</Table.Cell>
               {vacation}
             </Table.Row>
           </Table.Body>

@@ -1,0 +1,17 @@
+.VacationTableCell{
+    width: 50px ;
+    border: 1px solid #9f9fa6 ;
+    padding: 7px ;
+}
+.VacationTableHeaderCell{
+    width: 50px ;
+    border: 1px solid #9f9fa6 ;
+    padding: 7px ;
+    background-color: #1bc6ea;
+}
+
+.VacationTable{
+    margin-left: auto ;
+    margin-right: auto;
+    margin-top: 50px;
+}
