@@ -23,26 +23,22 @@ class VacationTable extends Component {
     this.month = {};
   };
 
-  loadMonth = () => {
-    console.log('loadMonth');
-    this.state.vacationDays.map(day => {
-      this.month[moment(day.day).format("MMMM")].push(moment(day.day).format('DD'));
-    });
-    console.dir(this.month);
-    console.dir( this.state.vacationDays);
-  };
+
 
   loadMonthNames = () => {
-    console.log('loadMonthNames');
     this.refresh();
     for (let i = 0; i < 12; i++) {
-      this.monthNames.push((moment([1995, i, 1]).format("MMMM")));
-      this.month[moment([1995, i, 1]).format("MMMM")]=[];
+      this.monthNames.push((moment([1995, i, 1]).format("MMMM")));//все названия месяцев
+      this.month[moment([1995, i, 1]).format("MMMM")]=[];//создал объект где ключ название месяцев ,азначение пустой масив
     }
       this.loadMonth();
   };
 
-
+  loadMonth = () => {
+    this.state.vacationDays.map(day => {
+      this.month[moment(day.day).format("MMMM")].push(moment(day.day).format('DD')); //заполнение массива дней в каждом месяце
+    });
+  };
 
 
   UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
@@ -84,11 +80,8 @@ class VacationTable extends Component {
             <Table.Row>
               <Table.Cell>{this.state.vacationDayCountFree}/{this.state.vacationDayCountAll}</Table.Cell>
               {vacation}
-
             </Table.Row>
           </Table.Body>
-
-
         </Table>
       </div>
     )
